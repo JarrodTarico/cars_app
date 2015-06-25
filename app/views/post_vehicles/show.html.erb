@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Heading:</strong>
+  <%= @post_vehicle.heading %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @post_vehicle.body %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @post_vehicle.price %>
+</p>
+
+<p>
+  <strong>Neighborhood:</strong>
+  <%= @post_vehicle.neighborhood %>
+</p>
+
+<p>
+  <strong>External url:</strong>
+  <%= @post_vehicle.external_url %>
+</p>
+
+<p>
+  <strong>Timestamp:</strong>
+  <%= @post_vehicle.timestamp %>
+</p>
+
+<%= link_to 'Edit', edit_post_vehicle_path(@post_vehicle) %> |
+<%= link_to 'Back', post_vehicles_path %>

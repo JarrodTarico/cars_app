@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Post Vehicles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Heading</th>
+      <th>Body</th>
+      <th>Price</th>
+      <th>Neighborhood</th>
+      <th>External url</th>
+      <th>Timestamp</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @post_vehicles.each do |post_vehicle| %>
+      <tr>
+        <td><%= post_vehicle.heading %></td>
+        <td><%= post_vehicle.body %></td>
+        <td><%= post_vehicle.price %></td>
+        <td><%= post_vehicle.neighborhood %></td>
+        <td><%= post_vehicle.external_url %></td>
+        <td><%= post_vehicle.timestamp %></td>
+        <td><%= link_to 'Show', post_vehicle %></td>
+        <td><%= link_to 'Edit', edit_post_vehicle_path(post_vehicle) %></td>
+        <td><%= link_to 'Destroy', post_vehicle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Post vehicle', new_post_vehicle_path %>
