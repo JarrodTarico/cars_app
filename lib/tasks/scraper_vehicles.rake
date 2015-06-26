@@ -41,12 +41,12 @@ namespace :scraper_vehicles do
 
 
 			#Limit number of Craigslist Post
-			case
-			    when PostVehicle.count(:conditions => "source = CRAIG") > 50 and (PostVehicle.include?('EBAYM'|'CARSD'); then
-			 	copy = Array.new(arr.keep_if { |posting| posting["source"] = "EBAYM|CARSD" })
-			 	puts copy 
-			end
-			
+	
+	    if (PostVehicle.count(:conditions => "source = CRAIG") > 50) && (posting["source"] = "EBAYM" || "CARSD") then
+	 	copy = Array.new(result["postings"].keep_if { |posting| posting["source"] = "EBAYM" || "CARSD" })
+	 	puts copy 
+	
+	
 
 			#Create New Post
 			@post_vehicle = PostVehicle.new
@@ -60,8 +60,8 @@ namespace :scraper_vehicles do
 
 			#save post
 			@post_vehicle.save
-
-  		end 
+		end	
+  	end 
 end 
 
   desc "Destroy all post"
